@@ -1,10 +1,5 @@
-import {
-  ErrorBoundaryComponent,
-  LinksFunction,
-  LoaderFunction,
-  useMatches,
-} from "remix"
-import { Meta, Links, Scripts, useRouteData, LiveReload } from "remix"
+import type { ErrorBoundaryComponent, LinksFunction } from "remix"
+import { Meta, Links, Scripts, LiveReload, useMatches } from "remix"
 import { Outlet } from "react-router-dom"
 
 import stylesUrl from "./styles/global.css"
