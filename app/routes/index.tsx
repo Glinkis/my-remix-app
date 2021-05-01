@@ -14,13 +14,7 @@ export let links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: stylesUrl }]
 }
 
-export let loader: LoaderFunction = async () => {
-  return { message: "this is awesome 😎" }
-}
-
 export default function Index() {
-  let data = useRouteData()
-
   return (
     <main style={{ textAlign: "center", padding: 20 }}>
       <h1>Welcome to Remix!</h1>
