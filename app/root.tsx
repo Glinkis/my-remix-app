@@ -3,9 +3,13 @@ import { Meta, Links, Scripts, LiveReload } from "remix"
 import { Outlet } from "react-router-dom"
 
 import stylesUrl from "./styles/global.css"
+import RouteError, { routeErrorStyles } from "./components/route-error"
 
 export let links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: stylesUrl }]
+  return [
+    { rel: "stylesheet", href: stylesUrl },
+    { rel: "stylesheet", href: routeErrorStyles },
+  ]
 }
 
 function Document({ children }: { children: React.ReactNode }) {
@@ -40,12 +44,7 @@ export default function App() {
 export let ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
   return (
     <Document>
-      <div className="center-content">
-        <section className="error">
-          <h1 className="title">App Error</h1>
-          <p className="message">{error.message}</p>
-        </section>
-      </div>
+      <RouteError error={error} />
     </Document>
   )
 }
