@@ -1,4 +1,4 @@
-import type { LinksFunction, LoaderFunction } from "remix"
+import { LinksFunction, LoaderFunction, useMatches } from "remix"
 import { Meta, Links, Scripts, useRouteData, LiveReload } from "remix"
 import { Outlet } from "react-router-dom"
 
@@ -13,6 +13,11 @@ export let loader: LoaderFunction = async () => {
 }
 
 function Document({ children }: { children: React.ReactNode }) {
+  let matches = useMatches()
+
+  // If at least one route wants to hydrate, this will return true
+  let includeScripts = matches.some((match) => match.handle?.hydrate)
+
   return (
     <html lang="en">
       <head>
@@ -24,7 +29,8 @@ function Document({ children }: { children: React.ReactNode }) {
       <body>
         {children}
 
-        <Scripts />
+        {includeScripts && <Scripts />}
+
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
