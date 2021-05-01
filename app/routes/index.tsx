@@ -14,9 +14,5 @@ export let links: LinksFunction = () => {
 }
 
 export default function Index() {
-  return (
-    <main style={{ textAlign: "center", padding: 20 }}>
-      <h1>Welcome to Remix!</h1>
-    </main>
-  )
+  return <h1>Welcome to Remix!</h1>
 }
