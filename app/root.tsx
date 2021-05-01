@@ -1,5 +1,5 @@
 import type { ErrorBoundaryComponent, LinksFunction } from "remix"
-import { Meta, Links, Scripts, LiveReload, useMatches } from "remix"
+import { Meta, Links, Scripts, LiveReload } from "remix"
 import { Outlet } from "react-router-dom"
 
 import stylesUrl from "./styles/global.css"
@@ -9,11 +9,6 @@ export let links: LinksFunction = () => {
 }
 
 function Document({ children }: { children: React.ReactNode }) {
-  let matches = useMatches()
-
-  // If at least one route wants to hydrate, this will return true
-  let includeScripts = matches.some((match) => match.handle?.hydrate)
-
   return (
     <html lang="en">
       <head>
@@ -25,8 +20,7 @@ function Document({ children }: { children: React.ReactNode }) {
       <body>
         {children}
 
-        {includeScripts && <Scripts />}
-
+        <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
