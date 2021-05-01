@@ -4,9 +4,10 @@
   "description": "",
   "license": "",
   "scripts": {
-    "build": "remix build",
     "dev": "remix run",
-    "start": "remix-serve build"
+    "build": "remix build",
+    "start": "remix-serve build",
+    "clean": "git clean -dfX -e !node_modules"
   },
   "dependencies": {
     "@remix-run/node": "0.17.0",
