@@ -6,7 +6,7 @@ type Props = {
   error: Error
 }
 
-export default function RouteError({ error }: Props) {
+export function RouteError({ error }: Props) {
   return (
     <div className="center-content">
       <section className="error">

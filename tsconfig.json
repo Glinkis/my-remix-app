@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "isolatedModules": true,
+    "types": ["cypress", "@testing-library/cypress"],
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "esModuleInterop": true,
     "jsx": "react-jsx",

@@ -1,0 +1,8 @@
+{
+  "component": {
+    "componentFolder": "app/components",
+    "testFiles": "**/*.spec.tsx",
+    "viewportHeight": 500,
+    "viewportWidth": 700
+  }
+}

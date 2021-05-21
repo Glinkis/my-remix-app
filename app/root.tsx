@@ -3,7 +3,7 @@ import { Meta, Links, Scripts, LiveReload } from "remix"
 import { Outlet } from "react-router-dom"
 
 import stylesUrl from "./styles/global.css"
-import RouteError, { routeErrorStyles } from "./components/route-error"
+import { RouteError, routeErrorStyles } from "./components/route-error"
 
 export let links: LinksFunction = () => {
   return [
