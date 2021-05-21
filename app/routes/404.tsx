@@ -6,8 +6,8 @@ export let meta: MetaFunction = () => {
 
 export default function FourOhFour() {
   return (
-    <div>
+    <main>
       <h1>404</h1>
-    </div>
+    </main>
   )
 }

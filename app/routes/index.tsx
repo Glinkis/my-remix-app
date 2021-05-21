@@ -14,5 +14,14 @@ export let links: LinksFunction = () => {
 }
 
 export default function Index() {
-  return <h1>Welcome to Remix!</h1>
+  return (
+    <>
+      <header>Header</header>
+      <main>
+        <h1>Welcome to Remix!</h1>
+        <h2>This is just the beginning.</h2>
+      </main>
+      <footer>Footer</footer>
+    </>
+  )
 }

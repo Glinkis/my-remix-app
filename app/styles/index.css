@@ -1,5 +1,16 @@
-/* 
- * when the user visits this page, this style will apply, when they leave, it
- * will get unloaded, so don't worry so much about conflicting styles between
- * pages!
- */
+header {
+  text-align: center;
+  padding: 4px;
+}
+
+main {
+  flex: 1;
+  text-align: center;
+  padding: 4px;
+}
+
+footer {
+  text-align: center;
+  color: #ccc;
+  padding: 8px;
+}

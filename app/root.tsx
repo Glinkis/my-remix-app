@@ -35,9 +35,7 @@ function Document({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <Document>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </Document>
   )
 }
