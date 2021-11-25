@@ -1,10 +1,7 @@
+import { ErrorBoundaryComponent } from "remix"
 export { default as routeErrorStyles } from "./route-error.styles.css"
 
-type Props = {
-  error: Error
-}
-
-export function RouteError({ error }: Props) {
+export const RouteError: ErrorBoundaryComponent = ({ error }) => {
   return (
     <div className="center-content">
       <section className="error">
