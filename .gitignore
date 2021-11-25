@@ -5,7 +5,4 @@ node_modules
 /server/build
 /public/build
 
-/cypress/videos
-/cypress/screenshots
-
 *.log

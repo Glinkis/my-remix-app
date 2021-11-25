@@ -1,6 +1,0 @@
-{
-  "component": {
-    "componentFolder": "app/components",
-    "testFiles": "**/*.spec.tsx"
-  }
-}
