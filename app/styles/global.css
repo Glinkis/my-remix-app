@@ -1,3 +1,11 @@
+:root {
+  --color-primary: #ff4082;
+  --color-secondary: #e6e6e6;
+  --color-tertiary: #90c0e8;
+  --color-quaternary: #5f82a0;
+  --color-quinary: #3f5669;
+}
+
 :focus:not(:focus-visible) {
   outline: none;
 }
@@ -8,12 +16,14 @@
   box-sizing: border-box;
 }
 
+html {
+  color: var(--color-quinary);
+  background: var(--color-tertiary);
+  font-family: roboto, noto, segoe ui, arial, sans-serif;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  color: #222;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   min-height: 100vh;
-  background: #fefefe;
 }

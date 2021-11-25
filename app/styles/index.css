@@ -1,16 +1,15 @@
 header {
   text-align: center;
-  padding: 4px;
+  padding: 1rem;
 }
 
 main {
   flex: 1;
   text-align: center;
-  padding: 4px;
+  padding: 1rem;
 }
 
 footer {
   text-align: center;
-  color: #ccc;
-  padding: 8px;
+  padding: 1rem;
 }
