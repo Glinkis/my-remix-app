@@ -1,6 +1,4 @@
-import stylesUrl from "./route-error.styles.css"
-
-export { stylesUrl as routeErrorStyles }
+export { default as routeErrorStyles } from "./route-error.styles.css"
 
 type Props = {
   error: Error
