@@ -1,4 +1,4 @@
-import type { MetaFunction, LinksFunction } from "remix"
+import type { MetaFunction, LinksFunction, LoaderFunction } from "remix"
 
 import stylesUrl from "../styles/index.css"
 

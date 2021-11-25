@@ -1,9 +1,15 @@
-import type { ErrorBoundaryComponent, LinksFunction, MetaFunction } from "remix"
+import {
+  ErrorBoundaryComponent,
+  LinksFunction,
+  MetaFunction,
+  useCatch,
+} from "remix"
 import { Meta, Links, Scripts, LiveReload } from "remix"
 import { Outlet } from "react-router-dom"
 
 import stylesUrl from "./styles/global.css"
-import { RouteError, routeErrorStyles } from "./components/route-error"
+import { routeErrorStyles } from "./components/route-error"
+import { CatchBoundaryComponent } from "@remix-run/react/routeModules"
 
 export let links: LinksFunction = () => {
   return [
@@ -27,10 +33,21 @@ export default function App() {
   )
 }
 
+export const CatchBoundary: CatchBoundaryComponent = () => {
+  const caught = useCatch()
+  return (
+    <Document>
+      <h1>{caught.status}</h1>
+      <p>{caught.statusText}</p>
+    </Document>
+  )
+}
+
 export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
   return (
     <Document>
-      <RouteError error={error} />
+      <h1>{error.name}</h1>
+      <p>{error.message}</p>
     </Document>
   )
 }
