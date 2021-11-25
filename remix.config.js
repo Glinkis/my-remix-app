@@ -1,7 +1,7 @@
 /**
  * @type {import("@remix-run/dev/config").AppConfig}
  */
-const config = {
+module.exports = {
   appDirectory: "app",
   cacheDirectory: "node_modules/.cache",
   assetsBuildDirectory: "public/build",
@@ -9,5 +9,3 @@ const config = {
   serverBuildDirectory: "build",
   devServerPort: 8002,
 }
-
-module.exports = config
