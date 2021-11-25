@@ -4,8 +4,7 @@ import {
   MetaFunction,
   useCatch,
 } from "remix"
-import { Meta, Links, Scripts, LiveReload } from "remix"
-import { Outlet } from "react-router-dom"
+import { Meta, Links, Scripts, LiveReload, Outlet } from "remix"
 
 import stylesUrl from "./styles/global.css"
 import { CatchBoundaryComponent } from "@remix-run/react/routeModules"
