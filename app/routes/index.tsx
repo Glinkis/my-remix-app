@@ -2,8 +2,8 @@ import type { MetaFunction, LinksFunction } from "remix"
 
 export let meta: MetaFunction = () => {
   return {
-    title: "Remix Starter",
-    description: "Welcome to remix!",
+    title: "Home",
+    description: "The landing page!",
   }
 }
 

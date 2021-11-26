@@ -1,9 +1,10 @@
 import { CatchBoundaryComponent, ErrorBoundaryComponent } from "@remix-run/react/routeModules"
-import type { LinksFunction, MetaFunction } from "remix"
+import { LinksFunction, MetaFunction, NavLink } from "remix"
 import { Link, ScrollRestoration, useCatch, Meta, Links, Scripts, LiveReload, Outlet } from "remix"
 
 import globalStylesUrl from "./styles/global.css"
 import rootStylesUrl from "./styles/root.css"
+import { useRef } from "react"
 
 export let links: LinksFunction = () => {
   return [
@@ -56,12 +57,12 @@ function Document({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <header>
-          <Link to="/" prefetch="intent">
+          <NavLink to="/" prefetch="intent">
             Home
-          </Link>
-          <Link to="/other" prefetch="intent">
+          </NavLink>
+          <NavLink to="/other" prefetch="intent">
             Other
-          </Link>
+          </NavLink>
         </header>
         {children}
         <footer>Footer</footer>
