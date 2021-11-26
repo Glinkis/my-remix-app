@@ -1,18 +1,14 @@
-import {
-  ErrorBoundaryComponent,
-  LinksFunction,
-  MetaFunction,
-  ScrollRestoration,
-  useCatch,
-} from "remix"
-import { Meta, Links, Scripts, LiveReload, Outlet } from "remix"
+import { CatchBoundaryComponent, ErrorBoundaryComponent } from "@remix-run/react/routeModules"
+import type { LinksFunction, MetaFunction } from "remix"
+import { Link, ScrollRestoration, useCatch, Meta, Links, Scripts, LiveReload, Outlet } from "remix"
 
-import stylesUrl from "./styles/global.css"
-import { CatchBoundaryComponent } from "@remix-run/react/routeModules"
+import globalStylesUrl from "./styles/global.css"
+import rootStylesUrl from "./styles/root.css"
 
 export let links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: stylesUrl },
+    { rel: "stylesheet", href: globalStylesUrl },
+    { rel: "stylesheet", href: rootStylesUrl },
     { rel: "icon", href: "/favicon.png", type: "image/png" },
   ]
 }
@@ -59,7 +55,16 @@ function Document({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <header>
+          <Link to="/" prefetch="intent">
+            Home
+          </Link>
+          <Link to="/other" prefetch="intent">
+            Other
+          </Link>
+        </header>
         {children}
+        <footer>Footer</footer>
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
         <ScrollRestoration />
