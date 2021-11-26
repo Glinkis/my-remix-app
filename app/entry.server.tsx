@@ -13,15 +13,15 @@ export default function handleRequest(
     <RemixServer context={remixContext} url={request.url} />
   )
 
-  responseHeaders.set("ETag", etag(markup))
-  responseHeaders.set("Content-Type", "text/html")
-
-  if (request.headers.get("If-None-Match") === responseHeaders.get("ETag")) {
+  if (request.headers.get("If-None-Match") === etag(markup)) {
     return new Response("", {
       status: 304,
       headers: responseHeaders,
     })
   }
+
+  responseHeaders.set("ETag", etag(markup))
+  responseHeaders.set("Content-Type", "text/html")
 
   return new Response(markup, {
     status: responseStatusCode,
@@ -29,22 +29,19 @@ export default function handleRequest(
   })
 }
 
-export let handleDataRequest: HandleDataRequestFunction = async (
-  response,
-  { request }
-) => {
+export let handleDataRequest: HandleDataRequestFunction = async (response, args) => {
   let body = await response.text()
 
-  if (request.method.toLowerCase() === "get") {
-    response.headers.set("etag", etag(body))
-
-    if (request.headers.get("If-None-Match") === response.headers.get("ETag")) {
+  if (args.request.method.toLowerCase() === "get") {
+    if (args.request.headers.get("If-None-Match") === etag(body)) {
       return new Response("", {
         status: 304,
         headers: response.headers,
       })
     }
   }
+
+  response.headers.set("ETag", etag(body))
 
   return response
 }
