@@ -1,9 +1,4 @@
-import {
-  ErrorBoundaryComponent,
-  LinksFunction,
-  MetaFunction,
-  useCatch,
-} from "remix"
+import { ErrorBoundaryComponent, LinksFunction, MetaFunction, useCatch } from "remix"
 import { Meta, Links, Scripts, LiveReload, Outlet } from "remix"
 
 import stylesUrl from "./styles/global.css"
