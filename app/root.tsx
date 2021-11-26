@@ -1,4 +1,10 @@
-import { ErrorBoundaryComponent, LinksFunction, MetaFunction, useCatch } from "remix"
+import {
+  ErrorBoundaryComponent,
+  LinksFunction,
+  MetaFunction,
+  ScrollRestoration,
+  useCatch,
+} from "remix"
 import { Meta, Links, Scripts, LiveReload, Outlet } from "remix"
 
 import stylesUrl from "./styles/global.css"
@@ -56,6 +62,7 @@ function Document({ children }: { children: React.ReactNode }) {
         {children}
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
+        <ScrollRestoration />
       </body>
     </html>
   )
