@@ -1,9 +1,15 @@
-import type { MetaFunction, LinksFunction } from "remix"
+import { MetaFunction, useLoaderData, HeadersFunction } from "remix"
 
 export let meta: MetaFunction = () => {
   return {
     title: "Home",
     description: "The landing page!",
+  }
+}
+
+export let headers: HeadersFunction = () => {
+  return {
+    "Cache-Control": "public, max-age=120",
   }
 }
 
