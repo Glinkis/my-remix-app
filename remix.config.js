@@ -5,7 +5,7 @@ module.exports = {
   appDirectory: "app",
   cacheDirectory: "node_modules/.cache",
   assetsBuildDirectory: "public/build",
-  publicPath: "/build/",
+  publicPath: "./",
   serverBuildDirectory: "build",
   devServerPort: 8002,
 }
