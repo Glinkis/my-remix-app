@@ -7,6 +7,7 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "target": "es2019",
+    "module": "esnext",
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
