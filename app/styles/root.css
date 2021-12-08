@@ -25,3 +25,20 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+
+.error {
+  margin: 2rem;
+  padding: 2rem;
+
+  align-self: center;
+
+  border-radius: 1rem;
+  background: rgba(255 255 255 / 0.4);
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.error::after {
+  content: "";
+  flex: 1;
+}

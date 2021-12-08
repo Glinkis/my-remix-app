@@ -31,8 +31,10 @@ export const CatchBoundary: CatchBoundaryComponent = () => {
   const caught = useCatch()
   return (
     <Document>
-      <h1>{caught.status}</h1>
-      <p>{caught.statusText}</p>
+      <CaughtError>
+        <h1>{caught.status}</h1>
+        <p>{caught.statusText}</p>
+      </CaughtError>
     </Document>
   )
 }
@@ -40,10 +42,21 @@ export const CatchBoundary: CatchBoundaryComponent = () => {
 export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
   return (
     <Document>
-      <h1>{error.name}</h1>
-      <p>{error.message}</p>
+      <CaughtError>
+        <h1>{error.name}</h1>
+        <p>{error.message}</p>
+      </CaughtError>
     </Document>
   )
+}
+
+interface CaughtErrorProps {
+  children: React.ReactNode
+}
+
+function CaughtError({ children }: CaughtErrorProps) {
+  // return styled error page
+  return <div className="error">{children}</div>
 }
 
 interface DocumentProps {
