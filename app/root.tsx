@@ -1,12 +1,11 @@
 import { CatchBoundaryComponent, ErrorBoundaryComponent } from "@remix-run/react/routeModules"
 import { LinksFunction, MetaFunction, NavLink } from "remix"
-import { Link, ScrollRestoration, useCatch, Meta, Links, Scripts, LiveReload, Outlet } from "remix"
+import { ScrollRestoration, useCatch, Meta, Links, Scripts, LiveReload, Outlet } from "remix"
 
 import globalStylesUrl from "./styles/global.css"
 import rootStylesUrl from "./styles/root.css"
-import { useRef } from "react"
 
-export let links: LinksFunction = () => {
+export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: globalStylesUrl },
     { rel: "stylesheet", href: rootStylesUrl },
@@ -14,7 +13,7 @@ export let links: LinksFunction = () => {
   ]
 }
 
-export let meta: MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return {
     viewport: "width=device-width, initial-scale=1",
   }
@@ -47,7 +46,11 @@ export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
   )
 }
 
-function Document({ children }: { children: React.ReactNode }) {
+interface DocumentProps {
+  children: React.ReactNode
+}
+
+function Document({ children }: DocumentProps) {
   return (
     <html lang="en">
       <head>

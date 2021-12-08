@@ -29,7 +29,7 @@ export default function handleRequest(
   })
 }
 
-export let handleDataRequest: HandleDataRequestFunction = async (response, args) => {
+export const handleDataRequest: HandleDataRequestFunction = async (response, args) => {
   let body = await response.text()
 
   if (args.request.method.toLowerCase() === "get") {
